@@ -1,0 +1,51 @@
+  Reference code for form validation
+  
+  
+    $("#abc").submit(function(e){
+   
+        $('select:visible option:selected').each(function() {
+            if(!$(this).val()){
+            $(this).parent().addClass("border");
+            }
+        });
+
+
+    $(":input").each(function() {
+    idCat = $(this).attr("id");
+      if($(this).attr("id") && ($(this).attr("type") == 'text')){
+          if($(this).attr("id").includes('abc')){  //id has abc
+
+            if($(this).attr("id") != 'abab'){   
+                if(!$(this).val()){
+                $(this).parent().addClass("border");
+                }
+			}
+          }
+      }
+  });
+
+
+    if (!$('input[name=abcabcd]:checked').length) {
+        $('#radiobox').addClass("border");
+    }
+ 
+
+   if(document.getElementById("emailfld").value!=document.getElementById("emailcfld").value ){  
+	emailValid = false;
+   $('#eval').text("  Email Address and confirm email address should be same  ");
+    }else{
+	$('#emailValidation').text("");
+}
+	
+      if(!radioVal || !emailVal || a.includes(false)){
+		    isVal = false;
+		 $("#warning").show();
+          $('html,body').animate(
+          {scrollTop: $("#pCont").offset().top
+          },'slow');
+      	  }
+         else{
+          isVal = true;
+            }
+	return isVal;
+     });
